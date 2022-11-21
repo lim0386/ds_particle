@@ -48,6 +48,8 @@ function Particle(x, y, level) {
 function setup() {
   createCanvas(displayWidth, displayHeight); 
   // createCanvas(windowWidth, windowHeight); 
+  document.documentElement.style.overflowX = "hidden";
+	document.documentElement.style.overflowY = "hidden";
   colorMode(HSB, 255);
   
   textAlign(CENTER);
@@ -173,4 +175,8 @@ function modelReady() {
 
 function mousePressed(){
   console.log(JSON.stringify(poses))
+}
+function doubleClicked() {
+	let fs = fullscreen();
+	fullscreen(!fs);
 }
